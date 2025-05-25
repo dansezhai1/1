@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>抖店达人邀约助手</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: sans-serif;
+      width: 300px;
+      padding: 10px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .input-group {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .input-group label {
+      flex-basis: 80px; /* Adjust as needed */
+    }
+    .input-group input {
+      flex-grow: 1;
+    }
+    button {
+      padding: 8px;
+      cursor: pointer;
+    }
+    .status, .stats {
+      border: 1px solid #ccc;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    .stats div {
+      margin-bottom: 3px;
+    }
+    #lastError {
+      color: red;
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>抖店达人邀约助手</h2>
+
+    <div class="input-group">
+      <label for="wechatId">微信ID:</label>
+      <input type="text" id="wechatId" placeholder="请输入你的微信ID">
+      <button id="saveWechatId">保存</button>
+    </div>
+
+    <div>
+      <button id="startButton">开始邀约</button>
+      <button id="stopButton">停止邀约</button>
+    </div>
+
+    <div class="status">
+      <strong>状态:</strong> <span id="statusDisplay">空闲</span>
+    </div>
+
+    <div class="stats">
+      <div>已处理: <span id="processedCount">0</span></div>
+      <div>已邀约: <span id="invitedCount">0</span></div>
+      <div>已跳过: <span id="skippedCount">0</span></div>
+      <div>错误数: <span id="errorCount">0</span></div>
+    </div>
+    <div id="lastError"></div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

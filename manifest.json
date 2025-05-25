@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "抖店达人邀约助手",
+  "version": "0.1.0",
+  "description": "自动化抖店精选联盟达人邀约流程",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "activeTab",
+    "webNavigation"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.douyin.com/*", "https://*.buyin.com/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://*.douyin.com/*",
+    "https://*.buyin.com/*"
+  ]
+}
